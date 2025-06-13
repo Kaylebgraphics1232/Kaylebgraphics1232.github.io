@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Female Youth Entrepreneurship Skill Program</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f3f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        nav {
+            background-color: #7d3c98;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #f4d03f;
+        }
+        
+        .hero {
+            background: url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(142, 68, 173, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #f4d03f;
+            color: #333;
+            padding: 0.8rem 1.8rem;
+            margin-top: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #f5b041;
+            transform: translateY(-3px);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #8e44ad;
+        }
+        
+        .program-details {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .program-details h3 {
+            color: #8e44ad;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .program-details ul {
+            list-style-position: inside;
+            margin-bottom: 1.5rem;
+        }
+        
+        .program-details li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .day-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #8e44ad;
+        }
+        
+        .day-card h4 {
+            color: #8e44ad;
+            margin-bottom: 0.8rem;
+        }
+        
+        .benefits {
+            background: #f0e6f6;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        .benefits h3 {
+            color: #8e44ad;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Form Styles */
+        .form-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #8e44ad;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #7d3c98;
+        }
+
+        .registration-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 2rem;
+        }
+
+        .registration-option {
+            flex: 1;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .registration-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Youth Entrepreneurship Skill Program</h1>
+            <p class="tagline">For Young Women (18-35 years)</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Program Details</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Launch Your Business Journey</h2>
+            <p>3-day intensive training to transform your skills into a successful business</p>
+            <a href="#register" class="btn">Register Now</a>
+        </div>
+    </section>
+    
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Program Details</h2>
+            
+            <div class="program-details">
+                <h3>3-Day Intensive Training Program</h3>
+                <p><strong>Daily Schedule:</strong> 8am to 1pm</p>
+                
+                <div class="day-card">
+                    <h4>Day 1 & 2: Skill Training & Business Development</h4>
+                    <ul>
+                        <li>Learn how to turn your skills into a real business</li>
+                        <li>Interactive sessions with practical exercises</li>
+                        <li>Free breakfast, snacks, and drinks provided</li>
+                        <li>Take-home meal included</li>
+                    </ul>
+                </div>
+                
+                <div class="day-card">
+                    <h4>Day 3: Business Planning Day</h4>
+                    <ul>
+                        <li>Complete your official Business Year Form</li>
+                        <li>Submit for professional review</li>
+                        <li>Receive your Participation Certificate</li>
+                    </ul>
+                </div>
+                
+                <div class="benefits">
+                    <h3>What's Next for Top Participants?</h3>
+                    <ul>
+                        <li>Business registration with CAC</li>
+                        <li>Support with resources to grow your business</li>
+                        <li>Mentorship from experienced business directors</li>
+                        <li>Ongoing guidance for your entrepreneurial journey</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="register" class="registration-section">
+        <div class="container">
+            <h2 class="section-title">Registration</h2>
+            
+            <div class="form-section">
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="18" max="35" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">WhatsApp Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Include country code">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Skill/Business Interest</label>
+                        <input type="text" id="interest" name="interest" required>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div style="text-align: center;">
+                <p><strong>WhatsApp:</strong> +234 811 404 0321</p>
+                <p>Send us a message for any questions about the program</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>Youth Entrepreneurship Skill Program. All rights reserved.</p>
+            <p>Empowering young women to build successful businesses</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const interest = document.getElementById('interest').value;
+            
+            // Validate age
+            const ageNum = parseInt(age);
+            if (ageNum < 18 || ageNum > 35) {
+                alert('You must be between 18 and 35 years to participate in this program.');
+                return;
+            }
+            
+            // Validate phone number
+            if (!phone.match(/^\+?[\d\s-]+$/)) {
+                alert('Please enter a valid WhatsApp phone number');
+                return;
+            }
+            
+            // Create WhatsApp message with all form data
+            const whatsappMessage = `Youth Entrepreneurship Skill Program Registration Details:
+            
+Full Name: ${fullName}
+Age: ${age}
+WhatsApp Number: ${phone}
+Address: ${address}
+Skill/Business Interest: ${interest}`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/2348114040321?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+  </html>
